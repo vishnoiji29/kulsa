@@ -26,44 +26,95 @@ a,
   transition: all 300ms ease;
 }
 
-/* DESKTOP NAV */
-
-nav,
-.nav-links {
-  display: flex;
+/* 🔹 Navigation Bar (Desktop & Mobile) */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Dark Transparent */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+    transition: 0.3s ease-in-out;
 }
 
-nav {
-  justify-content: space-around;
-  align-items: center;
-  height: 17vh;
-}
-
-.nav-links {
-  gap: 2rem;
-  list-style: none;
-  font-size: 1.5rem;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-  text-decoration-color: white;
-}
-
-a:hover {
-  color: grey;
-  text-decoration: underline;
-  text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
-}
-
+/* 🔹 Logo */
 .logo {
-  font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
-.logo:hover {
-  cursor: default;
+/* 🔹 Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #00ffcc; /* Smooth Hover Effect */
+}
+
+/* 🔹 Hamburger Menu (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* 🔹 Mobile Menu (Hidden by Default) */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    text-align: center;
+}
+
+.mobile-menu li {
+    padding: 15px 0;
+}
+
+.mobile-menu li a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.mobile-menu li a:hover {
+    color: #00ffcc;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
 }
 
 /* HAMBURGER MENU */
